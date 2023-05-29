@@ -14,4 +14,8 @@
         )
         </foreach>
     </insert>
+    <delete id="deleteById">
+        DELETE FROM user_mail_address
+        WHERE id = #{userId}
+    </delete>
 </mapper>

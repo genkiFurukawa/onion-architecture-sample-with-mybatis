@@ -6,4 +6,6 @@ public interface UserRepository {
     User fetchById(String userId);
 
     void createUser(User user);
+
+    void deleteUser(String userId);
 }

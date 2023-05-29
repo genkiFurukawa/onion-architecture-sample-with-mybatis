@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface UserMailAddressMapper {
     void save(List<UserMailAddress> userMailAddressList);
+
+    void deleteById(String userId);
 }

@@ -28,6 +28,7 @@ public class UserRepositoryImpl implements UserRepository {
         if (user == null) {
             return null;
         } else {
+            // NOTE: エンティティのクラスに変換する
             return user.toUserEntity();
         }
     }
@@ -41,5 +42,13 @@ public class UserRepositoryImpl implements UserRepository {
             var saveMailAddressList = user.getMailAddressList().stream().map(item -> new UserMailAddress(user.getUserId(), item.value())).toList();
             userMailAddressMapper.save(saveMailAddressList);
         }
+    }
+
+    @Transactional
+    @Override
+    public void deleteUser(String userId) {
+        // NOTE: 外部キー制約を貼っているので、メールアドレスの方から先に削除する。
+        userMailAddressMapper.deleteById(userId);
+        userTableMapper.deleteById(userId);
     }
 }
