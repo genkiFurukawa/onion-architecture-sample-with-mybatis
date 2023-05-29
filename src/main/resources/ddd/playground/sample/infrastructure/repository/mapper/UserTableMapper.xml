@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ddd.playground.sample.infrastructure.repository.mapper.UserTableMapper">
+    <resultMap id="userMap" type="ddd.playground.sample.infrastructure.repository.table.User">
+        <id property="id" column="id" />
+        <result property="name" column="name"/>
+        <collection property="mailAddressList" ofType="String">
+            <result property="mailAddress" column="mailAddress" />
+        </collection>
+    </resultMap>
+    <select id="selectById" resultMap="userMap">
+        SELECT
+            user.id AS id,
+            user.name AS name,
+            user_mail_address.mail_address AS mailAddress
+        FROM user
+        INNER JOIN user_mail_address
+            ON user.id = user_mail_address.id
+        WHERE user.id = #{userId}
+    </select>
+</mapper>
