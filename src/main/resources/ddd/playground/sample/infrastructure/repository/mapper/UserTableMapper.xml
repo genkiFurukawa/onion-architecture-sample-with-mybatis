@@ -20,4 +20,8 @@
             ON user.id = user_mail_address.id
         WHERE user.id = #{userId}
     </select>
+    <insert id="save">
+        INSERT INTO user (id, name) VALUES
+        (#{userId}, #{userName})
+    </insert>
 </mapper>
