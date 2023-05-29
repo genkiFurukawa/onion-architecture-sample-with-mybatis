@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    default: ci
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1:3306}/ddd_sample
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+    driverClassName: com.mysql.cj.jdbc.Driver
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
