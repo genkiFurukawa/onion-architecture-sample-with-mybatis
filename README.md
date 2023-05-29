@@ -97,3 +97,7 @@ INSERT INTO user_mail_address (id, mail_address) VALUES
 ## 今後やりたいこと
 - ユースケースが増えたときに備えて、`CQRS`を導入する
   - `INSERT`、`UPDATE`、`DELETE`は同じ書き方になるが、`SELECT`はユースケースによってマッピングするクラスが変わることが想定され、インフラ層のクラスの内部の秩序が乱れそうなため
+
+## 参考
+- [CQRS実践入門 [ドメイン駆動設計]](https://little-hands.hatenablog.com/entry/2019/12/02/cqrs)
+  - > 状況によってはCQRSは価値を発揮しますが、多くのシステムではCQRSによってリスク、複雑さが増すことに注意してください。
