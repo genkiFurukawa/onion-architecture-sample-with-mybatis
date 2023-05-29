@@ -1,0 +1,2 @@
+# DDD 素振り用リポジトリ
+- [ドメイン駆動設計 サンプルコード&FAQ](https://booth.pm/ja/items/3363104)はORMapperに[jOOQ](https://www.jooq.org/)を使っているが、業務で主に使っているORMapperは[MyBatis](https://mybatis.org/mybatis-3/ja/index.html)なので、`MyBatis`の時にどうすればよいかの素振り用リポジトリ
